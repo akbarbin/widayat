@@ -1,88 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+<!-- top Slider/Image -->
+<div class="header_slider">
 
-	<style type="text/css">
+  <div class="header_quote">
+    <p>Kami akan berusaha untuk menjadi yang terbaik bagi rakyat Lumajang tercinta. <br> Berjuang bersama rakyat untuk mewujudkan visi dan misi kami adalah motivasi terbesar kami untuk memajukan Lumajang ini.</p>
+  </div>
 
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
+  <!-- header slider -->
+  <div class="top_slider">        	
+    <div class="slides_container">
 
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
+      <div class="slide">
+        <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_1.jpg" alt=""></a>
+        <div class="caption">
+          <p><span>Kami memiliki pengalaman yang selama 36 tahun di PTPN XII.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+        </div>
+      </div>
 
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
+      <div class="slide">
+        <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_2.jpg" alt=""></a>
+        <div class="caption">
+          <p><span>Our history speaks for itself - we've never lost a case!</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+        </div>
+      </div>
 
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
+      <div class="slide">
+        <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_3.jpg" alt=""></a>
+        <div class="caption">
+          <p><span>We've got a wide range of legal services.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+        </div>
+      </div>
 
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
+    </div>              
+  </div>
 
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
-</head>
-<body>
+  <script>
+    jQuery(document).ready(function($) {
+      $('.top_slider').slides({
+        play: 7000,
+        pause: 7000,
+        hoverPause: true,
+        generateNextPrev: true,
+        effect: 'slide',
+        fadeSpeed: 250,
+        slideSpeed: 700,
+        slideEasing: 'easeInOutExpo',
+        preloadImage: 'images/loading.gif'
+      });
+      // Pagination item width
+      var pageItem = $('.top_slider .pagination li');
+      var pageItemWidth = 100 / pageItem.length;
+      pageItem.css("width", "" + pageItemWidth + "%");
+    });
+  </script>        
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+</div>
+<!--/ top Slider/Image -->
 </div>
 
-</body>
-</html>
+<div class="container">
+  <!-- middle -->
+  <div id="middle" class="full_width">
+
+    <div class="content">
+      <div class="post-detail">            
+        <div class="entry">
+          <div class="newsline">
+            <h2>Kabar Terbaru.</h2>
+          </div>
+          <!--/ latest news line -->
+          <div class="divider_space"></div>
+          <!--  postlist / 1 article -->
+          <div class="postlist">
+            <?php foreach ($news as $news_item): ?>
+              <article>
+                <figure class="image_frame">
+                  <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/case_1.jpg" alt=""></a>
+                  <figcaption>Title for Case Study</figcaption>
+                </figure>
+                <section class="summary">
+                  <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title']; ?></a></h1>
+                  <p><?php echo $news_item['text'] ?></p>
+                  <div class="post-meta"><a href="index.php/news/<?php echo $news_item['slug'] ?>" class="link-more alignleft">Lihat detailnya</a> <a href="#" class="link-more">Kabar lain</a></div>
+                </section>
+                <div class="clear"></div>
+              </article>
+            <?php endforeach; ?>
+          </div>
+          <!--/  postlist / 1 article -->
+          <!-- 2 Cols: 3/5 + 2/5 -->
+          <div class="row">
+            <div class="col col_3_5">
+              <div class="inner">
+                <h3>Testimoni Rakyat:</h3>
+
+                <div class="quoteBox">
+                  <div class="inner">
+                    <div class="quote-text">Beliau merupakan sesosok ayah yang sangat baik. Kejujuran yang selalu menjadi yang pertama, kesederhaan yang tinggi yang selalu ditunjukkan, keimanan dan ketaqwaan selalu dia tanamkan. Sehingga saya sangat mendukung sebagai anak agar Abah menjadi orang yang bermanfaat bagi orang banyak. Amin.</div>
+                    <div class="quote-author"><span>Muhamad Akbar Bin Widayat</span>, PUTRA KETIGA</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            <div class="col col_2_5">
+              <div class="inner">
+                <div class="widget-container newsletterBox">
+
+                  <div class="quoteBox">
+                    <div class="inner">
+                      <div class="quote-text">Donec congue lacinia dui, a porttitor lectus condimentum oreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus e vestibulum faucibus et in metus. In pellentesque faucibus vestibulum. Nulla nulla justo, eget luctus tortor dolor sit amet lipsum odio lectus congue. </div>               
+                      <div class="quote-author"><span>MARCIA HERNANDEZ</span>, CLIENT</div>
+                    </div>
+                  </div> 
+                </div>
+
+              </div>
+            </div>-->
+          </div>
+          <!--/ 2 Cols: 3/5 + 2/5 -->
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!--/ content -->
+  </div>
+  <!--/ middle --> 
+</div>
+<!--/ container -->
