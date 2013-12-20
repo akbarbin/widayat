@@ -37,7 +37,7 @@ class Welcome extends CI_Controller {
     $this->load->view('profil');
     $this->load->view('shared/footer');
   }
-  
+
   public function padangan_isi_hati_nurani() {
     $this->load->view('shared/header');
     $this->load->view('padangan_isi_hati_nurani');

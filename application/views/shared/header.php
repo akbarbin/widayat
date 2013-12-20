@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>widayat.com</title>
+    <title>www.widayat.com</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -55,14 +55,14 @@
             </div>
           </div>
           <div class="header_right">
-            <nav id="topmenu">            
+            <nav id="topmenu">
               <ul class="dropdown">
-                <li class="menu-item-home current-menu-ancestor"><a href="<?php echo base_url("index.php/");?>"><span>Beranda</span></a></li>
-                <li><a href="<?php echo base_url("index.php/welcome/profil"); ?>"><span>Profil</span></a></li>
-                <li><a href="<?php echo base_url("index.php/welcome/padangan_isi_hati_nurani"); ?>"><span>Pandangan Isi Hati Nurani</span></a></li>
-                <li><a href="<?php echo base_url("index.php/news/"); ?>"><span>Artikel</span></a></li>
+                <li class="menu-item-home <?= ($this->router->fetch_class()=="welcome" and $this->router->fetch_method()=="index")?"current-menu-ancestor":"" ?>"><a href="<?php echo base_url("index.php/");?>"><span>Beranda</span></a></li>
+                <li class="<?= ($this->router->fetch_method()=="profil")?"current-menu-ancestor":"" ?>"><a href="<?php echo base_url("index.php/welcome/profil"); ?>"><span>Profil</span></a></li>
+                <li class="<?= ($this->router->fetch_method()=="padangan_isi_hati_nurani")?"current-menu-ancestor":"" ?>"><a href="<?php echo base_url("index.php/welcome/padangan_isi_hati_nurani"); ?>"><span>Pandangan Isi Hati Nurani</span></a></li>
+                <li class="<?= ($this->router->fetch_class()=="news")?"current-menu-ancestor":"" ?>"><a href="<?php echo base_url("index.php/news/"); ?>"><span>Artikel</span></a></li>
                 <!--<li><a href="#"><span>Kata Rakyat</span></a></li>-->
-                <li><a href="<?php echo base_url("index.php/contacts"); ?>"><span>Kontak</span></a></li>
+                <li class="<?= ($this->router->fetch_class()=="contacts")?"current-menu-ancestor":"" ?>"><a href="<?php echo base_url("index.php/contacts"); ?>"><span>Kontak</span></a></li>
                 <!--<li><a href="service.html"><span>Service</span></a></li>-->
               </ul>                
             </nav>
