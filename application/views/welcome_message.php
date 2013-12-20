@@ -12,7 +12,7 @@
       <div class="slide">
         <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_1.jpg" alt=""></a>
         <div class="caption">
-          <p><span>Kami memiliki pengalaman yang selama 36 tahun di PTPN XII.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+          <p><span>Calon Anggota DPRD Kab. Lumajang DAPIL 3 (Pasirian, Candipuro, Pronojiwo, Tempursari)</span><a href="#" class="link-more">FIND OUT MORE</a></p>
         </div>
       </div>
 
@@ -44,7 +44,7 @@
         fadeSpeed: 250,
         slideSpeed: 700,
         slideEasing: 'easeInOutExpo',
-        preloadImage: 'images/loading.gif'
+        preloadImage: '<?php echo base_url(); ?>application/assets/images/loading.gif'
       });
       // Pagination item width
       var pageItem = $('.top_slider .pagination li');
@@ -92,29 +92,26 @@
             <div class="col col_3_5">
               <div class="inner">
                 <h3>Testimoni Rakyat:</h3>
-
                 <div class="quoteBox">
                   <div class="inner">
-                    <div class="quote-text">Beliau merupakan sesosok ayah yang sangat baik. Kejujuran yang selalu menjadi yang pertama, kesederhaan yang tinggi yang selalu ditunjukkan, keimanan dan ketaqwaan selalu dia tanamkan. Sehingga saya sangat mendukung sebagai anak agar Abah menjadi orang yang bermanfaat bagi orang banyak. Amin.</div>
-                    <div class="quote-author"><span>Muhamad Akbar Bin Widayat</span>, PUTRA KETIGA</div>
+                    <div class="quote-text">Selama ini beliau mendahulukan kepentingan agama, keluarga, dan orang lain.
+                      Kesederhanaannya, kejujuran, serta peduli kepada sesama membuat keluarga kami menjadi keluarga bahagia.
+                      Kami sebagai istri dan ibu dari anak - anak sangat mendukung pencalonan suami saya menjadi caleg PDI Perjuangan di Kabupaten Lumajang.</div>
+                    <div class="quote-author"><span>Hj. LIES HANDAYANI, Spd</span> - ISTRI</div>
                   </div>
                 </div>
               </div>
             </div>
-<!--            <div class="col col_2_5">
+            <div class="col col_2_5">
               <div class="inner">
-                <div class="widget-container newsletterBox">
-
-                  <div class="quoteBox">
-                    <div class="inner">
-                      <div class="quote-text">Donec congue lacinia dui, a porttitor lectus condimentum oreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus e vestibulum faucibus et in metus. In pellentesque faucibus vestibulum. Nulla nulla justo, eget luctus tortor dolor sit amet lipsum odio lectus congue. </div>               
-                      <div class="quote-author"><span>MARCIA HERNANDEZ</span>, CLIENT</div>
-                    </div>
-                  </div> 
+                <div class="quoteBox">
+                  <div class="inner">
+                    <div class="quote-text">Beliau merupakan sesosok ayah yang sangat baik. Kejujuran yang selalu menjadi yang pertama, kesederhaan yang tinggi yang selalu ditunjukkan, keimanan dan ketaqwaan selalu dia tanamkan. Sehingga saya sangat mendukung sebagai anak agar Abah menjadi orang yang bermanfaat bagi orang banyak. Amin.</div>
+                    <div class="quote-author"><span>Muhamad Akbar Bin Widayat, ST</span> - PUTRA KETIGA</div>
+                  </div>
                 </div>
-
               </div>
-            </div>-->
+            </div>
           </div>
           <!--/ 2 Cols: 3/5 + 2/5 -->
 
