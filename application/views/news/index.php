@@ -9,11 +9,10 @@
             <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title'] ?></a></h1>
           </header>
           <div class="entry">
-            <p><img src="<?php echo base_url(); ?>application/assets/images/temp/entry_03.jpg" alt="" class="frame_box"></p>
+            <p><img src="<?php echo base_url(). $news_item['news_image'] ?>" alt="" class="frame_box"></p>
             <p><?php echo $news_item['text'] ?></p>
             <div class="clear"></div>
           </div>
-
           <div class="post-meta">
             <div class="alignleft"><a href="news/<?php echo $news_item['slug'] ?>" class="link-more">Read more</a></div>
             <em>Posted by <span class="author">Admin</span>
@@ -63,21 +62,7 @@
           <li><a href="blog-details.html">Two new clients signed</a></li>
         </ul>
       </div>   
-      <!--/ widget_recent_entries -->  
-
-      <!-- widget_popular_posts --> 
-      <div class="widget-container widget_popular_posts">
-        <img src="<?php echo base_url(); ?>application/assets/images/icons/widget_icon_02.png" alt="" class="widget_icon">
-        <h3 class="widget-title">Most  Discussed</h3>
-        <ul>
-          <li><a href="blog-details.html">New team members for. our...</a></li>
-          <li><a href="blog-details.html">Lovely Blueberry Pie</a></li>
-          <li><a href="blog-details.html">Clean Classy  Corporate</a></li>
-          <li><a href="blog-details.html">Two new clients signed</a></li>
-          <li><a href="blog-details.html">Looking to hire Junior Mar...</a></li>                           
-        </ul>
-      </div> 
-      <!--/ widget_popular_posts -->
+      <!--/ widget_recent_entries -->
     </div> 
     <!--/ sidebar -->           
     <div class="clear"></div>	    
