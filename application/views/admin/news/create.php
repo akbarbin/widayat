@@ -11,7 +11,7 @@
             <?php echo form_open_multipart('admin/news/create', array('class' => 'ajax_form', 'id' => 'contactForm')) ?>
             <div class="row alignleft">
               <label for="name">Judul*</label>
-              <input type="text" id="name" name="title" value="" class="inputtext input_middle required">
+              <input type="text" id="name" name="title" value="<?php echo set_value('title'); ?>" class="inputtext input_middle required">
             </div>
             <div class="space"></div>
             <div class="row alignleft upload"> 
@@ -21,12 +21,10 @@
             <div class="clear"></div>
             <div class="row">
               <label for="message">Masukkan Deskripsi*</label>
-              <textarea id="message" cols="30" rows="10" name="text" class="textarea textarea_middle required"></textarea>
+              <textarea id="message" cols="30" rows="10" name="text" class="textarea textarea_middle required"><?php echo set_value('text'); ?></textarea>
             </div>
             <div class="row rowSubmit">
-              <input type="submit" id="send" value="SEND YOUR MESSAGE" class="btn-submit">                                
-              <a onClick="document.getElementById('commentForm').reset();
-                  return false" href="#" class="link-reset">reset all fields</a>
+              <input type="submit" id="send" value="SIMPAN" class="btn-submit">
             </div>
             <?php echo form_close() ?>
           </div>

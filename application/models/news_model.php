@@ -26,11 +26,12 @@ class News_model extends CI_Model {
   public function set_news() {
     $this->load->helper('url');
     $slug = url_title($this->input->post('title'), 'dash', TRUE);
+    $location = "uploads/news/".$_FILES['news_image']['name'];
     $data = array(
         'title' => $this->input->post('title'),
         'slug' => $slug,
         'text' => $this->input->post('text'),
-        'news_image' => $this->input->post('news_image')
+        'news_image' => $location
     );
     return $this->db->insert('news', $data);
   }

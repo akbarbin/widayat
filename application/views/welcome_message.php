@@ -74,7 +74,7 @@
             <?php foreach ($news as $news_item): ?>
               <article>
                 <figure class="image_frame">
-                  <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/case_1.jpg" alt=""></a>
+                  <a href="#"><img src="<?php echo base_url(). $news_item['news_image'] ?>" alt=""></a>
                   <figcaption>Title for Case Study</figcaption>
                 </figure>
                 <section class="summary">

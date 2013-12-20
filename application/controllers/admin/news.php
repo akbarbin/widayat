@@ -25,19 +25,13 @@ class News extends CI_Controller {
     $this->form_validation->set_rules('title', 'Judul', 'required');
     $this->form_validation->set_rules('text', 'Deskripsi', 'required');
     if (empty($_FILES['news_image']['name'])) {
-      $this->form_validation->set_rules('userfile', 'Document', 'required');
+      $this->form_validation->set_rules('news_image', 'Gambar', 'required');
     }
 
-    $config['upload_path'] = './uploads/';
+    $config['upload_path'] = './uploads/news/';
     $config['allowed_types'] = 'gif|jpg|png';
     $config['max_size'] = '200';
     $this->load->library('upload', $config);
-
-    if (!$this->upload->do_upload('news_image')) {
-      $data = array('error' => $this->upload->display_errors());
-    } else {
-      $data = array('upload_data' => $this->upload->data());
-    }
 
     if ($this->form_validation->run() === FALSE) {
       $this->load->view('shared/header');
@@ -45,6 +39,13 @@ class News extends CI_Controller {
       $this->load->view('shared/footer');
     } else {
       $this->news_model->set_news();
+      // FIX ME: change into method
+      if (!$this->upload->do_upload('news_image')) {
+        $data = array('error' => $this->upload->display_errors());
+      } else {
+        $data = array('upload_data' => $this->upload->data());
+      }
+      $this->session->set_flashdata('succes', 'Artikel baru berhasil dibuat.');
       redirect('admin/news');
     }
   }

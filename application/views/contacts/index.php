@@ -13,22 +13,22 @@
               <?php echo form_open_multipart('contacts', array('class' => 'ajax_form', 'id' => 'contactForm')) ?>
               <div class="row alignleft">
                 <label for="name">Isikan nama lengkap Anda*</label>
-                <input type="text" id="name" name="name" value="" class="inputtext required">
+                <input type="text" id="name" name="name" value="<?php echo set_value('name'); ?>" class="inputtext required">
               </div>
               <div class="space"></div>
               <div class="row alignleft">
                 <label for="email">Isikan alamat email Anda*</label>
-                <input type="text" id="email" name="email" value="" class="inputtext required">
+                <input type="text" id="email" name="email" value="<?php echo set_value('email'); ?>" class="inputtext required">
               </div>
               <div class="row alignleft">
                 <label for="email">Isikan nomor telephone Anda*</label>
-                <input type="text" id="phone_number" name="phone_number" value="" class="inputtext required">
+                <input type="text" id="phone_number" name="phone_number" value="<?php echo set_value('phone_number'); ?>" class="inputtext required">
               </div>
-              <div class="space"></div>                               
+              <div class="space"></div>                          
               <div class="clear"></div>   
               <div class="rowl">
                 <label for="message">Isikan pesan Anda*</label>
-                <textarea id="content" cols="30" rows="10" name="content" class="textarea textarea_middle required"></textarea>
+                <textarea id="content" cols="30" rows="10" name="content" class="textarea textarea_middle required"><?php echo set_value('content'); ?></textarea>
               </div>
               <div class="row rowSubmit">
                 <input type="submit" id="send" value="SEND YOUR MESSAGE" class="btn-submit">
@@ -63,13 +63,10 @@
                       <div><strong>Join us:</strong> <br> <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/icons/btn_facebook.png" alt=""></a></div>
                       <div class="clear"></div>
                     </div>-->
-
         </div>
       </div>
       <!--/ widget_contact -->
-
-
-    </div> 
+    </div>
     <!--/ sidebar -->
 
     <div class="clear"></div>	    
