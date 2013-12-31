@@ -38,15 +38,19 @@ class News extends CI_Controller {
       $this->load->view('admin/news/create', $data);
       $this->load->view('shared/footer');
     } else {
-      $this->news_model->set_news();
       // FIX ME: change into method
       if (!$this->upload->do_upload('news_image')) {
         $data = array('error' => $this->upload->display_errors());
+        $this->load->view('shared/header');
+        $this->load->view('admin/news/create', $data);
+        $this->load->view('shared/footer');
+        $this->session->set_flashdata('error', 'Artikel baru berhasil dibuat.');
       } else {
+        $this->news_model->set_news();
         $data = array('upload_data' => $this->upload->data());
+        $this->session->set_flashdata('succes', 'Artikel baru berhasil dibuat.');
+        redirect('admin/news');
       }
-      $this->session->set_flashdata('succes', 'Artikel baru berhasil dibuat.');
-      redirect('admin/news');
     }
   }
 
@@ -74,7 +78,6 @@ class News extends CI_Controller {
 
   public function show($slug) {
     $data['news_item'] = $this->news_model->get_news($slug);
-
     if (empty($data['news_item'])) {
       show_404();
     }

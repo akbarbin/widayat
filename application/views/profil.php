@@ -3,8 +3,10 @@
     <article class="post-item post-detail">
       <h1>Tentang Ir. H. M Widayat</h1>          
       <div class="entry">
-        <p><img src="<?php echo base_url(); ?>application/assets/images/temp/widayat-profile.jpg" width="400" height="500" alt="" class="frame_right"> Curabitur vulputate, ligula lacinia scelrisque tempor, lacus lacus ornare ante, ac egeistas est urna sit amet arcu. Class aptent taeraciti sociosqu ad litora torquent. Hibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-        <p>Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a dolor sit amet lipsum enim in.</p>
+        <p><img src="<?php echo base_url(); ?>application/assets/images/temp/widayat-profile.jpg" width="400" height="500" alt="" class="frame_right"> Assalamualaikum Wr. Wb</p>
+        <p>Puji dan syukur kita panjatkan kehadirat Allah SWT karena berkat rahmat dan karuniaNya pada kesempatan ini kami bisa memperkenalkan diri mudah - mudahan
+          Allah SWT senantia meridhoi. Amin YRA
+        </p>
         <p><span class="text-red"><strong>2002</strong></span><strong> - LOREM IPSUM DOLOR</strong> <br>
           Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus. Nunc eu ullamcor per orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus.</p>
         <p><span class="text-red"><strong>2007</strong></span><strong> - VIVAMUS HENDERIT</strong><br>

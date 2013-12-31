@@ -5,10 +5,21 @@ class News extends CI_Controller {
   public function __construct() {
     parent::__construct();
     $this->load->model('news_model');
+    $this->load->helper('date');
   }
 
   public function index() {
     $data['news'] = $this->news_model->get_news();
+    $data['popular_news'] = $this->news_model->popular_news();
+    
+    $this->load->library('pagination');
+
+    $config['base_url'] = base_url() . 'index.php/news/index.php';
+    $config['total_rows'] = 200;
+    $config['per_page'] = 20;
+
+    $this->pagination->initialize($config);
+
     $data['title'] = 'News archive';
 
     $this->load->view('shared/header');
@@ -59,6 +70,9 @@ class News extends CI_Controller {
 
   public function show($slug) {
     $data['news_item'] = $this->news_model->get_news($slug);
+    $data['popular_news'] = $this->news_model->popular_news();
+    // update total read count
+    $this->news_model->total_read_count($slug);
 
     if (empty($data['news_item'])) {
       show_404();
@@ -70,7 +84,7 @@ class News extends CI_Controller {
     $this->load->view('news/show', $data);
     $this->load->view('shared/footer');
   }
-  
+
   public function destroy($slug) {
     $this->db->delete('news', array('slug' => $slug));
     redirect('news');
