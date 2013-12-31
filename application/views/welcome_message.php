@@ -19,14 +19,14 @@
       <div class="slide">
         <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_2.jpg" alt=""></a>
         <div class="caption">
-          <p><span>Our history speaks for itself - we've never lost a case!</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+          <p><span>Motto Ir .H. M. Widayat - BERMAKNA.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
         </div>
       </div>
 
       <div class="slide">
         <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_3.jpg" alt=""></a>
         <div class="caption">
-          <p><span>We've got a wide range of legal services.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+          <p><span>IR. H. M. Widayat Gallery.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
         </div>
       </div>
 
@@ -74,8 +74,8 @@
             <?php foreach ($news as $news_item): ?>
               <article>
                 <figure class="image_frame">
-                  <a href="#"><img src="<?php echo base_url(). $news_item['news_image'] ?>" alt=""></a>
-                  <figcaption>Title for Case Study</figcaption>
+                  <a href="#"><img width="270" height="160" src="<?php echo base_url(). $news_item['news_image'] ?>" alt=""></a>
+                  <figcaption><?php echo $news_item['title']; ?></figcaption>
                 </figure>
                 <section class="summary">
                   <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title']; ?></a></h1>
