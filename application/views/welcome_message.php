@@ -71,20 +71,24 @@
           <div class="divider_space"></div>
           <!--  postlist / 1 article -->
           <div class="postlist">
-            <?php foreach ($news as $news_item): ?>
-              <article>
-                <figure class="image_frame">
-                  <a href="#"><img width="270" height="160" src="<?php echo base_url(). $news_item['news_image'] ?>" alt=""></a>
-                  <figcaption><?php echo $news_item['title']; ?></figcaption>
-                </figure>
-                <section class="summary">
-                  <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title']; ?></a></h1>
-                  <p><?php echo $news_item['text'] ?></p>
-                  <div class="post-meta"><a href="index.php/news/<?php echo $news_item['slug'] ?>" class="link-more alignleft">Lihat detailnya</a> <a href="#" class="link-more">Kabar lain</a></div>
-                </section>
-                <div class="clear"></div>
-              </article>
-            <?php endforeach; ?>
+            <?php if ($news->num_rows > 0): ?>
+              <?php foreach ($news->result_array() as $news_item): ?>
+                <article>
+                  <figure class="image_frame">
+                    <a href="#"><img width="270" height="160" src="<?php echo base_url() . $news_item['news_image'] ?>" alt=""></a>
+                    <figcaption><?php echo $news_item['title']; ?></figcaption>
+                  </figure>
+                  <section class="summary">
+                    <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title']; ?></a></h1>
+                    <p><?php echo $news_item['text'] ?></p>
+                    <div class="post-meta"><a href="index.php/news/<?php echo $news_item['slug'] ?>" class="link-more alignleft">Lihat detailnya</a> <a href="#" class="link-more">Kabar lain</a></div>
+                  </section>
+                  <div class="clear"></div>
+                </article>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <article>Tidak ada berita saat ini.</article>
+            <?php endif; ?>
           </div>
           <!--/  postlist / 1 article -->
           <!-- 2 Cols: 3/5 + 2/5 -->

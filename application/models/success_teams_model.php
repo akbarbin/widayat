@@ -10,7 +10,7 @@ class Success_teams_model extends CI_Model {
   public function get_success_teams($slug = FALSE) {
     if ($slug === FALSE) {
       $query = $this->db->get('success_teams');
-      return $query->result_array();
+      return $query;
     }
 
     $query = $this->db->get_where('success_teams', array('slug' => $slug));

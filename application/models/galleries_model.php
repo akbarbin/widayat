@@ -10,7 +10,7 @@ class Galleries_model extends CI_Model {
   public function get_galleries($slug = FALSE) {
     if ($slug === FALSE) {
       $query = $this->db->get_where('galleries', array('status' => 'active'));
-      return $query->result_array();
+      return $query;
     }
 
     $query = $this->db->get_where('galleries', array('slug' => $slug));

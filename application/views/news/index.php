@@ -2,25 +2,29 @@
   <!-- middle -->
   <div id="middle" class="cols2 sidebar_left noimage">
     <div class="content" role="main">
-      <?php foreach ($news as $news_item): ?>
-        <article class="post-item">
-          <header>
-            <div class="date-box"><?php echo date("d M Y", strtotime($news_item['created_at'])) ?></div>
-            <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title'] ?></a></h1>
-          </header>
-          <div class="entry">
-            <p><img width="575" height="300" src="<?php echo base_url() . $news_item['news_image'] ?>" alt="" class="frame_box"></p>
-            <p><?php echo $news_item['text'] ?></p>
-            <div class="clear"></div>
-          </div>
-          <div class="post-meta">
-            <div class="alignleft"><a href="news/<?php echo $news_item['slug'] ?>" class="link-more">Read more</a></div>
-            <em>Posted by <span class="author">Admin</span>
-  <!--            <span class="separator">|</span> <a href="#" class="link-comments">17 comments</a>-->
-            </em>
-          </div>
-        </article>
-      <?php endforeach ?>
+      <?php if ($news->num_rows > 0): ?>
+        <?php foreach ($news->result_array() as $news_item): ?>
+          <article class="post-item">
+            <header>
+              <div class="date-box"><?php echo date("d M Y", strtotime($news_item['created_at'])) ?></div>
+              <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title'] ?></a></h1>
+            </header>
+            <div class="entry">
+              <p><img width="575" height="300" src="<?php echo base_url() . $news_item['news_image'] ?>" alt="" class="frame_box"></p>
+              <p><?php echo $news_item['text'] ?></p>
+              <div class="clear"></div>
+            </div>
+            <div class="post-meta">
+              <div class="alignleft"><a href="news/<?php echo $news_item['slug'] ?>" class="link-more">Read more</a></div>
+              <em>Posted by <span class="author">Admin</span>
+    <!--            <span class="separator">|</span> <a href="#" class="link-comments">17 comments</a>-->
+              </em>
+            </div>
+          </article>
+        <?php endforeach ?>
+      <?php else : ?>
+        <article>Tidak ada berita untuk saat ini.</article>
+      <?php endif; ?>
       <!-- pagination -->
       <!--      <div class="tf_pagination">
               <div class="inner">
@@ -55,9 +59,13 @@
         <img src="<?php echo base_url(); ?>application/assets/images/icons/widget_icon_01.png" alt="" class="widget_icon">            
         <h3 class="widget-title">Artikel Popular</h3>
         <ul>
-          <?php foreach ($popular_news as $popular_news): ?>
-            <li><a href="news/<?php echo $popular_news['slug'] ?>"><?php echo $popular_news['title'] ?></a></li>
-          <?php endforeach; ?>
+          <?php if ($popular_news->num_rows > 0) : ?>
+            <?php foreach ($popular_news->result() as $popular_news): ?>
+              <li><a href="news/<?php echo $popular_news->slug ?>"><?php echo $popular_news->title ?></a></li>
+            <?php endforeach; ?>
+          <?php else : ?>
+            <li>Tidak ada berita untuk saat ini.</li>
+          <?php endif; ?>
         </ul>
       </div>   
       <!--/ widget_recent_entries -->

@@ -56,10 +56,15 @@
                 <td>Kertowono Afdeling Kajaran dan Kaliwelang</td>
                 <td>Lumajang</td>
               </tr>
-              <tr class="odd">
+              <tr>
                 <td>2008 - 2010</td>
                 <td>Jatirono</td>
                 <td>Banyuwangi</td>
+              </tr>
+              <tr class="odd">
+                <td>2010 - 2013</td>
+                <td>Banjarsari</td>
+                <td>Jember</td>
               </tr>
             </tbody>
           </table>
@@ -86,13 +91,17 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($success_teams as $success_teams): ?>
-                <tr>
-                  <td><?php echo $success_teams['name'] ?></td>
-                  <td><?php echo $success_teams['address'] ?></td>
-                  <td><?php echo $success_teams['position'] ?></td>
-                </tr>
-              <?php endforeach; ?>
+              <?php if ($success_teams->num_rows > 0): ?>
+                <?php foreach ($success_teams->result_array() as $success_teams): ?>
+                  <tr>
+                    <td><?php echo $success_teams['name'] ?></td>
+                    <td><?php echo $success_teams['address'] ?></td>
+                    <td><?php echo $success_teams['position'] ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php else : ?>
+                <tr>Team sukses masih belum di isi.</tr>
+              <?php endif; ?>
             </tbody>
           </table>
         </div>

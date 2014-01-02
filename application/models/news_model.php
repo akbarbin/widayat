@@ -10,7 +10,7 @@ class News_model extends CI_Model {
   public function get_news($slug = FALSE) {
     if ($slug === FALSE) {
       $query = $this->db->get('news');
-      return $query->result_array();
+      return $query;
     }
 
     $query = $this->db->get_where('news', array('slug' => $slug));
@@ -21,7 +21,7 @@ class News_model extends CI_Model {
 
   public function get_news_home() {
     $query = $this->db->query('SELECT * FROM news LIMIT 2');
-    return $query->result_array();
+    return $query;
   }
 
   public function set_news() {
@@ -66,7 +66,7 @@ class News_model extends CI_Model {
 
   public function popular_news() {
     $popular_news = $this->db->query("SELECT * FROM `news` ORDER BY total_read DESC LIMIT 5");
-    return $popular_news->result_array();
+    return $popular_news;
   }
   
 }
