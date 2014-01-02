@@ -5,26 +5,25 @@ class News extends CI_Controller {
   public function __construct() {
     parent::__construct();
     $this->load->model('news_model');
+    $this->load->helper('text');
     $this->load->helper('date');
   }
 
   public function index() {
     $data['news'] = $this->news_model->get_news();
     $data['popular_news'] = $this->news_model->popular_news();
-    
+
     $this->load->library('pagination');
 
     $config['base_url'] = base_url() . 'index.php/news/index.php';
-    $config['total_rows'] = 200;
+    $config['total_rows'] = 2000;
     $config['per_page'] = 20;
 
     $this->pagination->initialize($config);
 
     $data['title'] = 'News archive';
 
-    $this->load->view('shared/header');
-    $this->load->view('news/index', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/guest', $data);
   }
 
   public function create() {
@@ -37,9 +36,7 @@ class News extends CI_Controller {
     $this->form_validation->set_rules('text', 'text', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('news/create', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/guest', $data);
     } else {
       $this->news_model->set_news();
       redirect('news');
@@ -59,9 +56,7 @@ class News extends CI_Controller {
     $this->form_validation->set_rules('text', 'text', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('news/edit', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/guest', $data);
     } else {
       $this->news_model->update_news();
       redirect('news');
@@ -80,9 +75,7 @@ class News extends CI_Controller {
 
     $data['title'] = $data['news_item']['title'];
 
-    $this->load->view('shared/header');
-    $this->load->view('news/show', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/guest', $data);
   }
 
   public function destroy($slug) {

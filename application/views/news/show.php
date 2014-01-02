@@ -40,17 +40,9 @@
       </div>
       <!--/ widget_search -->
       <!-- widget_recent_entries -->
-      <div class="widget-container widget_recent_entries">
-        <img src="<?php echo base_url(); ?>application/assets/images/icons/widget_icon_01.png" alt="" class="widget_icon">            
-        <h3 class="widget-title">Artikel Popular</h3>
-        <ul>
-          <?php foreach ($popular_news as $popular_news): ?>
-            <li><a href="news/<?php echo $popular_news['slug'] ?>"><?php echo $popular_news['title'] ?></a></li>
-          <?php endforeach; ?>
-        </ul>
-      </div>   
-      <!--/ widget_recent_entries -->  
-
+      <?php $data2 = new News() ?>
+      <?php $data2->load->view('shared/sidebar'); ?>
+      <!--/ widget_recent_entries -->
     </div> 
     <!--/ sidebar -->           
     <div class="clear"></div>	    

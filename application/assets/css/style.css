@@ -3074,6 +3074,8 @@ article footer {
 .entry p, .summary p {
 	margin:5px 0 18px 0}
 
+.entry p, .summary ol li {
+	margin:5px 0 18px 15px}
 .entry p strong {
 	color:#262626}
 
