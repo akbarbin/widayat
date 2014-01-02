@@ -4,7 +4,7 @@ class Contacts extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
-    $this->load->model( 'contacts_model');
+    $this->load->model('contacts_model');
   }
 
   public function index() {
@@ -19,9 +19,7 @@ class Contacts extends CI_Controller {
     $this->form_validation->set_rules('content', 'Pesan', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('contacts/index', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/guest', $data);
     } else {
       $this->contacts_model->set_contacts();
       $this->contacts_model->sending_email_to_me();

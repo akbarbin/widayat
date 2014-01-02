@@ -7,19 +7,18 @@ class Galleries_model extends CI_Model {
     $this->load->helper('date');
   }
 
-  public function get_galleries($slug = FALSE) {
-    if ($slug === FALSE) {
+  public function get_galleries($id = FALSE) {
+    if ($id === FALSE) {
       $query = $this->db->get_where('galleries', array('status' => 'active'));
       return $query;
     }
 
-    $query = $this->db->get_where('galleries', array('slug' => $slug));
+    $query = $this->db->get_where('galleries', array('id' => $id));
     return $query->row_array();
   }
 
   public function set_galleries() {
     $this->load->helper('url');
-    $slug = url_title($this->input->post('title'), 'dash', TRUE);
     $location = "uploads/galleries/" . $_FILES['gallery_image']['name'];
     $data = array(
         'title' => $this->input->post('title'),
@@ -31,10 +30,9 @@ class Galleries_model extends CI_Model {
     return $this->db->insert('galleries', $data);
   }
 
-  public function update_galleries() {
+  public function update_galleries($id) {
     $this->load->helper('url');
-    $slug = url_title($this->input->post('title'), 'dash', TRUE);
-    $slug_id = $this->uri->segment(3);
+    $location = "uploads/galleries/" . $_FILES['gallery_image']['name'];
     $data = array(
         'title' => $this->input->post('title'),
         'gallery_image' => $location,
@@ -42,7 +40,7 @@ class Galleries_model extends CI_Model {
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s")
     );
-    $this->db->where('slug', $slug_id);
+    $this->db->where('id', $id);
     $this->db->update('galleries', $data);
   }
 

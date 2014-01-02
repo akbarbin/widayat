@@ -51,9 +51,14 @@
                 <td>Gunung Gambir</td>
                 <td>Jember</td>
               </tr>
+              <tr>
+                <td>2001 - 2004</td>
+                <td>Kajaran</td>
+                <td>Lumajang</td>
+              </tr>
               <tr class="odd">
-                <td>2001 - 2007</td>
-                <td>Kertowono Afdeling Kajaran dan Kaliwelang</td>
+                <td>2005 - 2007</td>
+                <td>Kaliwelang</td>
                 <td>Lumajang</td>
               </tr>
               <tr>

@@ -97,7 +97,7 @@ class News extends CI_Controller {
 
   public function destroy($slug) {
     $this->db->delete('news', array('slug' => $slug));
-    redirect('news');
+    redirect('admin/news');
   }
 
 }

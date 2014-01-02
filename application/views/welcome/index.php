@@ -10,6 +10,13 @@
     <div class="slides_container">
 
       <div class="slide">
+        <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/visi_slider.jpg" alt=""></a>
+        <div class="caption">
+          <p><span>Visi Ir .H. M. Widayat - Menuju Keluarga Kecil Bahagia Sejahtera.</span> <a href="#" class="link-more">FIND OUT MORE</a></p>
+        </div>
+      </div>
+
+      <div class="slide">
         <a href="#"><img src="<?php echo base_url(); ?>application/assets/images/temp/flex_slide_1.jpg" alt=""></a>
         <div class="caption">
           <p><span>Calon Anggota DPRD Kab. Lumajang DAPIL 3 (Pasirian, Candipuro, Pronojiwo, Tempursari)</span><a href="#" class="link-more">FIND OUT MORE</a></p>
@@ -80,7 +87,7 @@
                   </figure>
                   <section class="summary">
                     <h1><a href="news/<?php echo $news_item['slug'] ?>"><?php echo $news_item['title']; ?></a></h1>
-                    <p><?php echo $news_item['text'] ?></p>
+                    <?php echo word_limiter($news_item['text'], 40); ?>
                     <div class="post-meta"><a href="index.php/news/<?php echo $news_item['slug'] ?>" class="link-more alignleft">Lihat detailnya</a> <a href="#" class="link-more">Kabar lain</a></div>
                   </section>
                   <div class="clear"></div>

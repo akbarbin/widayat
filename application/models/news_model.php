@@ -42,11 +42,13 @@ class News_model extends CI_Model {
   public function update_news() {
     $this->load->helper('url');
     $slug = url_title($this->input->post('title'), 'dash', TRUE);
-    $slug_id = $this->uri->segment(3);
+    $slug_id = $this->uri->segment(4);
+    $location = "uploads/news/" . $_FILES['news_image']['name'];
     $data = array(
         'title' => $this->input->post('title'),
         'slug' => $slug,
         'text' => $this->input->post('text'),
+        'news_image' => $location,
         'updated_at' => date("Y-m-d H:i:s")
     );
     $this->db->where('slug', $slug_id);
@@ -68,5 +70,5 @@ class News_model extends CI_Model {
     $popular_news = $this->db->query("SELECT * FROM `news` ORDER BY total_read DESC LIMIT 5");
     return $popular_news;
   }
-  
+
 }

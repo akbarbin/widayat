@@ -66,6 +66,7 @@
           <div class="header_right">
             <nav id="topmenu">
               <ul class="dropdown">
+                <li class="<?= ($this->router->fetch_class() == "welcome") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/"); ?>"><span>Guest</span></a></li>
                 <li class="<?= ($this->router->fetch_class() == "news") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/news/"); ?>"><span>Kelola Berita</span></a></li>
                 <li class="<?= ($this->router->fetch_method() == "gallery") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/galleries"); ?>"><span>Kelola Gallery</span></a></li>
                 <li class="<?= ($this->router->fetch_class() == "contacts") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/success_teams"); ?>"><span>Kelola Team Sukses</span></a></li>
@@ -83,8 +84,8 @@
           <div class="container">
             <div class="fcol f_col_1">
               <!-- widget contacts -->
-              <div class="widget-container widget_contact">                    
-                <h3>Kontak saya:</h3>     
+              <div class="widget-container widget_contact">
+                <h3>Kontak saya:</h3>
                 <div class="contact-address">
                   <div class="address">Jalan Buk Serang No. 107 Kedung Pakis Kec. Pasirian, Lumajang - Jawa Timur 47371.</div>
                   <div class="phone">Phone: <span>0852 5874 9056</span></div>

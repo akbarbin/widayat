@@ -33,23 +33,24 @@ class Success_teams extends CI_Controller {
     }
   }
 
-  public function edit($slug) {
+  public function edit($id) {
     $this->load->helper('form');
     $this->load->library('form_validation');
-    $data['success_teams_item'] = $this->success_teams_model->get_success_teams($slug);
+    $data['success_team'] = $this->success_teams_model->get_success_teams($id);
 
-    if (empty($data['success_teams_item'])) {
+    if (empty($data['success_team'])) {
       show_404();
     }
 
-    $this->form_validation->set_rules('title', 'Title', 'required');
-    $this->form_validation->set_rules('text', 'text', 'required');
+    $this->form_validation->set_rules('name', 'Nama', 'required');
+    $this->form_validation->set_rules('address', 'Alamat', 'required');
+    $this->form_validation->set_rules('position', 'Jabatan', 'required');
 
     if ($this->form_validation->run() === FALSE) {
       $this->load->view('layout/admin', $data);
     } else {
-      $this->success_teams_model->update_success_teams();
-      redirect('success_teams');
+      $this->success_teams_model->update_success_teams($id);
+      redirect('admin/success_teams');
     }
   }
 
@@ -62,9 +63,9 @@ class Success_teams extends CI_Controller {
     $this->load->view('layout/admin', $data);
   }
 
-  public function destroy($slug) {
-    $this->db->delete('success_teams', array('slug' => $slug));
-    redirect('success_teams');
+  public function destroy($id) {
+    $this->db->delete('success_teams', array('id' => $id));
+    redirect('admin/success_teams');
   }
 
 }

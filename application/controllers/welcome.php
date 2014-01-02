@@ -26,6 +26,7 @@ class Welcome extends CI_Controller {
   }
 
   public function index() {
+    $this->load->helper('text');
     $data['news'] = $this->news_model->get_news_home();
     $this->load->view('layout/guest', $data);
   }

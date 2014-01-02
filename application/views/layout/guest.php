@@ -66,6 +66,7 @@
             <nav id="topmenu">
               <ul class="dropdown">
                 <li class="menu-item-home <?= ($this->router->fetch_class() == "welcome" and $this->router->fetch_method() == "index") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/"); ?>"><span>Beranda</span></a></li>
+                <li class="<?= ($this->router->fetch_class() == "admin/news") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/news"); ?>"><span>Admin</span></a></li>
                 <li class="<?= ($this->router->fetch_method() == "profil") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/welcome/profil"); ?>"><span>Profil</span></a></li>
                 <li class="<?= ($this->router->fetch_method() == "padangan_isi_hati_nurani") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/welcome/padangan_isi_hati_nurani"); ?>"><span>Pandangan Isi Hati Nurani</span></a></li>
                 <li class="<?= ($this->router->fetch_class() == "news") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/news/"); ?>"><span>Kabar Berita</span></a></li>
@@ -92,7 +93,7 @@
                   <div class="address">Jalan Buk Serang No. 107 Kedung Pakis Kec. Pasirian, Lumajang - Jawa Timur 47371.</div>
                   <div class="phone">Phone: <span>0852 5874 9056</span></div>
                   <div class="mail">Email: <a href="mailto:hello@LawOffice.org">irhmwidayat@gmail.com</a></div>
-                </div>    
+                </div>
               </div>
               <!--/ widget contacts -->  
             </div>
