@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2013 at 10:26 PM
+-- Generation Time: Jan 02, 2014 at 01:19 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -35,17 +35,6 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`id`, `name`, `email`, `phone_number`, `content`) VALUES
-(30, 'Muhamad Akbar Bin Widayat', 'muhamadakbarbw@yahoo.com', '08998989899', 'Bagaimana pendapat anda tentang Pasirian.'),
-(29, 'Muhamad Akbar Bin Widayat', 'muhamadakbarbw@yahoo.com', '08998989899', 'Bagaimana pendapat anda tentang Pasirian.'),
-(28, 'Muhamad Akbar Bin Widayat', 'muhamadakbarbw@yahoo.com', '089912311', 'Usaha apa yang akan anda lakukan untuk memajukan lumajang tercinta ini?'),
-(27, 'Muhamad Akbar Bin Widayat', 'muhamadakbarbw@yahoo.com', '089912311', 'Usaha apa yang akan anda lakukan untuk memajukan lumajang tercinta ini?'),
-(26, 'Muhamad Akbar Bin Widayat', 'muhamadakbarbw@gmail.com', '090909', 'Saya menanyakan berapa benar kami.');
-
 -- --------------------------------------------------------
 
 --
@@ -58,9 +47,26 @@ CREATE TABLE IF NOT EXISTS `news` (
   `news_image` varchar(255) NOT NULL,
   `slug` varchar(128) NOT NULL,
   `text` text NOT NULL,
+  `total_read` int(4) NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `slug` (`slug`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `news_image`, `slug`, `text`, `total_read`, `created_at`, `updated_at`) VALUES
+(21, 'Tes', 'uploads/news/flex_slide_1.jpg', 'tes', 'fdasfdasfdsa', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(22, 'fdsa', 'uploads/news/fb_activity.jpg', 'fdsa', 'fdsa', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(23, 'Calon DPRD Lumajang', 'uploads/news/widayat-profile.jpg', 'calon-dprd-lumajang', 'Hari ini hari lahirnya bapak widayat.\r\nSaat ini kami akan mendukung', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(24, 'FFFFF', 'uploads/news/case_2.jpg', 'fffff', 'fdsafdsa', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(25, 'FFFFFfdsfdsa', 'uploads/news/thumb_7.jpg', 'ffffffdsfdsa', 'fdasfdasdfs', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(26, 'FFFFFfdsfdsa', 'uploads/news/thumb_7.jpg', 'ffffffdsfdsa', 'fdasfdasdfs', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, 'FFFFFfdsfdsa', 'uploads/news/thumb_7.jpg', 'ffffffdsfdsa', 'fdasfdasdfs', 1, '2013-12-31 04:40:52', '2013-12-31 04:40:52'),
+(28, 'fdasfdas', 'uploads/news/case_1.jpg', 'fdasfdas', 'dfsafdsa', 3, '2013-12-31 04:41:26', '2013-12-31 04:41:26');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
