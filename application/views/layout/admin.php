@@ -66,7 +66,7 @@
           <div class="header_right">
             <nav id="topmenu">
               <ul class="dropdown">
-                <li class="<?= ($this->router->fetch_class() == "welcome") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/"); ?>"><span>Guest</span></a></li>
+                <!--<li class="<?//= ($this->router->fetch_class() == "welcome") ? "current-menu-ancestor" : "" ?>"><a href="<?php // echo base_url("index.php/"); ?>"><span>Guest</span></a></li>-->
                 <li class="<?= ($this->router->fetch_class() == "news") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/news/"); ?>"><span>Kelola Berita</span></a></li>
                 <li class="<?= ($this->router->fetch_method() == "gallery") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/galleries"); ?>"><span>Kelola Gallery</span></a></li>
                 <li class="<?= ($this->router->fetch_class() == "contacts") ? "current-menu-ancestor" : "" ?>"><a href="<?php echo base_url("index.php/admin/success_teams"); ?>"><span>Kelola Team Sukses</span></a></li>
