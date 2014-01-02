@@ -9,9 +9,7 @@ class Galleries extends CI_Controller {
 
   public function index() {
     $data['galleries'] = $this->galleries_model->get_galleries();
-    $this->load->view('shared/header');
-    $this->load->view('admin/galleries/index', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/admin', $data);
   }
 
   public function create() {
@@ -31,9 +29,7 @@ class Galleries extends CI_Controller {
     $this->load->library('upload', $config);
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('admin/galleries/create', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/admin', $data);
     } else {
       // FIX ME: change into method
       if (!$this->upload->do_upload('gallery_image')) {
@@ -64,9 +60,7 @@ class Galleries extends CI_Controller {
     $this->form_validation->set_rules('text', 'text', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('galleries/edit', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/admin', $data);
     } else {
       $this->galleries_model->update_galleries();
       redirect('galleries');
@@ -81,9 +75,7 @@ class Galleries extends CI_Controller {
 
     $data['title'] = $data['galleries_item']['title'];
 
-    $this->load->view('shared/header');
-    $this->load->view('galleries/show', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/admin', $data);
   }
 
   public function destroy($slug) {

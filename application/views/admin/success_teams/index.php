@@ -13,7 +13,7 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($success_teams as $success_teams): ?>
+              <?php foreach ($success_teams->result_array() as $success_teams): ?>
                 <tr>
                   <td><?php echo $success_teams['name'] ?></td>
                   <td><?php echo $success_teams['address'] ?></td>

@@ -5,6 +5,7 @@ class News extends CI_Controller {
   public function __construct() {
     parent::__construct();
     $this->load->model('news_model');
+    $this->load->helper('text');
     $this->load->helper('date');
   }
 
@@ -15,7 +16,7 @@ class News extends CI_Controller {
     $this->load->library('pagination');
 
     $config['base_url'] = base_url() . 'index.php/news/index.php';
-    $config['total_rows'] = 200;
+    $config['total_rows'] = 2000;
     $config['per_page'] = 20;
 
     $this->pagination->initialize($config);

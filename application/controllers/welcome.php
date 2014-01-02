@@ -27,31 +27,23 @@ class Welcome extends CI_Controller {
 
   public function index() {
     $data['news'] = $this->news_model->get_news_home();
-    $this->load->view('shared/header');
-    $this->load->view('welcome_message', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/guest', $data);
   }
 
   public function profil() {
     $this->load->model('success_teams_model');
     $data['success_teams'] = $this->success_teams_model->get_success_teams();
-    $this->load->view('shared/header');
-    $this->load->view('profil', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/guest', $data);
   }
 
   public function padangan_isi_hati_nurani() {
-    $this->load->view('shared/header');
-    $this->load->view('padangan_isi_hati_nurani');
-    $this->load->view('shared/footer');
+    $this->load->view('layout/guest');
   }
 
   public function gallery() {
     $this->load->model('galleries_model');
     $data['galleries'] = $this->galleries_model->get_galleries();
-    $this->load->view('shared/header');
-    $this->load->view('gallery', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/guest', $data);
   }
 
 }

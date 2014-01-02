@@ -11,9 +11,7 @@ class Success_teams extends CI_Controller {
     $data['success_teams'] = $this->success_teams_model->get_success_teams();
     $data['title'] = 'Success teams';
 
-    $this->load->view('shared/header');
-    $this->load->view('admin/success_teams/index', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/admin', $data);
   }
 
   public function create() {
@@ -27,9 +25,7 @@ class Success_teams extends CI_Controller {
     $this->form_validation->set_rules('position', 'Jabatan', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('admin/success_teams/create', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/admin', $data);
     } else {
       $this->success_teams_model->set_success_teams();
       $this->session->set_flashdata('succes', 'Team baru berhasil dibuat.');
@@ -50,9 +46,7 @@ class Success_teams extends CI_Controller {
     $this->form_validation->set_rules('text', 'text', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('shared/header');
-      $this->load->view('success_teams/edit', $data);
-      $this->load->view('shared/footer');
+      $this->load->view('layout/admin', $data);
     } else {
       $this->success_teams_model->update_success_teams();
       redirect('success_teams');
@@ -64,12 +58,8 @@ class Success_teams extends CI_Controller {
     if (empty($data['success_teams_item'])) {
       show_404();
     }
-
     $data['title'] = $data['success_teams_item']['title'];
-
-    $this->load->view('shared/header');
-    $this->load->view('success_teams/show', $data);
-    $this->load->view('shared/footer');
+    $this->load->view('layout/admin', $data);
   }
 
   public function destroy($slug) {
