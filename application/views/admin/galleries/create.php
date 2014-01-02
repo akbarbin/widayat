@@ -18,6 +18,10 @@
               <label for="fakeupload">Upload Gambar*</label>
               <input type="file" name="gallery_image" size="20"/>
             </div>
+            <div class="row alignleft">
+              <label for="name">Judul*</label>
+              <?php echo form_dropdown('status', $options_select); ?>
+            </div>
             <div class="clear"></div>
             <div class="row rowSubmit">
               <input type="submit" id="send" value="SIMPAN" class="btn-submit">

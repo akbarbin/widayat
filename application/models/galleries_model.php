@@ -9,7 +9,7 @@ class Galleries_model extends CI_Model {
 
   public function get_galleries($slug = FALSE) {
     if ($slug === FALSE) {
-      $query = $this->db->get('galleries');
+      $query = $this->db->get_where('galleries', array('status' => 'active'));
       return $query->result_array();
     }
 
@@ -24,6 +24,7 @@ class Galleries_model extends CI_Model {
     $data = array(
         'title' => $this->input->post('title'),
         'gallery_image' => $location,
+        'status' => $this->input->post('status'),
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s")
     );
@@ -36,12 +37,13 @@ class Galleries_model extends CI_Model {
     $slug_id = $this->uri->segment(3);
     $data = array(
         'title' => $this->input->post('title'),
-        'slug' => $slug,
-        'text' => $this->input->post('text'),
+        'gallery_image' => $location,
+        'status' => $this->input->post('status'),
+        'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s")
     );
     $this->db->where('slug', $slug_id);
     $this->db->update('galleries', $data);
   }
-  
+
 }

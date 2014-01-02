@@ -23,7 +23,6 @@ class Welcome extends CI_Controller {
   public function __construct() {
     parent::__construct();
     $this->load->model('news_model');
-    $this->load->model('galleries_model');
   }
 
   public function index() {
@@ -34,8 +33,10 @@ class Welcome extends CI_Controller {
   }
 
   public function profil() {
+    $this->load->model('success_teams_model');
+    $data['success_teams'] = $this->success_teams_model->get_success_teams();
     $this->load->view('shared/header');
-    $this->load->view('profil');
+    $this->load->view('profil', $data);
     $this->load->view('shared/footer');
   }
 
@@ -46,6 +47,7 @@ class Welcome extends CI_Controller {
   }
 
   public function gallery() {
+    $this->load->model('galleries_model');
     $data['galleries'] = $this->galleries_model->get_galleries();
     $this->load->view('shared/header');
     $this->load->view('gallery', $data);

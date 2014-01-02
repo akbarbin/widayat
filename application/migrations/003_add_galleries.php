@@ -9,6 +9,8 @@ class Migration_Add_galleries extends CI_Migration {
         'id' => array(
             'type' => 'INT',
             'constraint' => 5,
+            'unsigned' => TRUE,
+            'auto_increment' => TRUE,
             'null' => FALSE,
         ),
         'title' => array(
@@ -26,7 +28,7 @@ class Migration_Add_galleries extends CI_Migration {
             'type' => 'DATETIME',
         ),
     ));
-
+    $this->dbforge->add_key('id', TRUE);
     $this->dbforge->create_table('galleries');
   }
 

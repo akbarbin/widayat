@@ -15,6 +15,8 @@ class Galleries extends CI_Controller {
   }
 
   public function create() {
+    $data['options_select'] = $this->options_select();
+
     $this->load->helper('form');
     $this->load->library('form_validation');
     $this->form_validation->set_rules('title', 'Judul', 'required');
@@ -30,14 +32,14 @@ class Galleries extends CI_Controller {
 
     if ($this->form_validation->run() === FALSE) {
       $this->load->view('shared/header');
-      $this->load->view('admin/galleries/create');
+      $this->load->view('admin/galleries/create', $data);
       $this->load->view('shared/footer');
     } else {
       // FIX ME: change into method
       if (!$this->upload->do_upload('gallery_image')) {
         $data = array('error' => $this->upload->display_errors());
         $this->load->view('shared/header');
-        $this->load->view('admin/galleries/create');
+        $this->load->view('admin/galleries/create', $data);
         $this->load->view('shared/footer');
         $this->session->set_flashdata('error', 'Gallery baru berhasil dibuat.');
       } else {
@@ -87,6 +89,14 @@ class Galleries extends CI_Controller {
   public function destroy($slug) {
     $this->db->delete('galleries', array('slug' => $slug));
     redirect('galleries');
+  }
+
+  public function options_select() {
+    $options = array(
+        'nonactive' => 'Non Aktif',
+        'active' => 'Aktif'
+    );
+    return $options;
   }
 
 }

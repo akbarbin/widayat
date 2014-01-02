@@ -1308,7 +1308,7 @@ h3.toggle.box {
 	box-shadow: 0px 2px 2px 0px #919191;}
 
 .boxed {
-	background:#ebebeb;	
+	/*background:#ebebeb;*/	
 	margin:0;
 	padding:20px;
 	position:relative;
@@ -1741,8 +1741,8 @@ h3.toggle.box {
 	z-index:1}
 
 .minigallery.boxed {
-	border:1px solid #f7f7f7;
-	background:#ebebeb;
+/*	border:1px solid #f7f7f7;
+	background:#ebebeb;*/
 	padding:20px 15px;}
 
 .minigallery.boxed a {
